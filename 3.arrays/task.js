@@ -1,27 +1,13 @@
-function isSame(number, index, arr2) {
-  console.log(arr2.indexOf(number))
-  return index = arr2.indexOf(number);
-}
-
 function compareArrays(arr1, arr2) {
   let result;
-  result = arr1.every(isSame, arr2);
+  if (arr1.length !== arr2.length) {
+  	result = false;
+  } else {
+    result = arr1.every(function(number, index) { return number === arr2[index]});
+  }
   return result; 
 }
 
 function advancedFilter(arr) {
-  let resultArr = arr.filter(isThree).filter(isPositive).map(multiplyByTen);
-  return resultArr; // array
-}
-
-function isThree(number) {
-  return number % 3 === 0;
-}
-
-function isPositive(number) {
-  return number > 0;
-}
-
-function multiplyByTen(number) {
-  return number * 10;
+  return arr.filter((number) => { return number % 3 === 0 }).filter((number) => { return number > 0 }).map((number) => { return number * 10 });
 }
