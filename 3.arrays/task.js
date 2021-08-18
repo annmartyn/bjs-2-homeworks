@@ -10,4 +10,3 @@ function compareArrays(arr1, arr2) {
 
 function advancedFilter(arr) {
   return arr.filter((number) => { return number % 3 === 0 }).filter((number) => { return number > 0 }).map((number) => { return number * 10 });
-}
