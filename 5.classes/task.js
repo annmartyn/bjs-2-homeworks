@@ -99,8 +99,9 @@ class Library {
 		let counter = 0;
 		for (let i = 0; i < this.books.length; ++i) {
             if (this.books[i]['name'] === name) {
+            	let needed_book = this.books[i];
             	this.books.splice(i, 1);
-                return this.books[i];
+                return needed_book;
             } else {
             	counter = counter + 1;
             }
